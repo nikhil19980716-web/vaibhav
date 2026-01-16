@@ -14,6 +14,8 @@ on:
           - prod
           - prod2
 
+run-name: Deploy ${{ github.event.inputs.environment }} from ${{ github.ref_name }}
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
