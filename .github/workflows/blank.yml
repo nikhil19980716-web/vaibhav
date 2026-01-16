@@ -1,17 +1,18 @@
-# This is a basic workflow to help you get started with Actions
+name: DEV,UAT,PROD,PROD2
 
-name: CI
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      environment:
+        description: "Target environment (dev, uat, prod, prod2)"
+        required: true
+        default: "dev"
+        type: choice
+        options:
+          - dev
+          - uat
+          - prod
+          - prod2
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
